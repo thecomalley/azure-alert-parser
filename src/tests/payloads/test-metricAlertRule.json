@@ -1,0 +1,44 @@
+{
+  "schemaId": "azureMonitorCommonAlertSchema",
+  "data": {
+    "essentials": {
+      "alertId": "/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.AlertsManagement/alerts/12345678-1234-1234-1234-1234567890ab",
+      "alertRule": "test-metricAlertRule",
+      "severity": "Sev4",
+      "signalType": "Metric",
+      "monitorCondition": "Fired",
+      "monitoringService": "Platform",
+      "alertTargetIDs": [
+        "/subscriptions/11111111-1111-1111-1111-111111111111/resourcegroups/test-RG/providers/microsoft.storage/storageaccounts/test-storageAccount"
+      ],
+      "configurationItems": ["test-storageAccount"],
+      "originAlertId": "11111111-1111-1111-1111-111111111111_test-RG_microsoft.insights_metricAlerts_test-metricAlertRule_1234567890",
+      "firedDateTime": "2024-12-18T22:31:30.972Z",
+      "description": "Alert rule description",
+      "essentialsVersion": "1.0",
+      "alertContextVersion": "1.0"
+    },
+    "alertContext": {
+      "properties": { "customKey1": "value1", "customKey2": "value2" },
+      "conditionType": "SingleResourceMultipleMetricCriteria",
+      "condition": {
+        "windowSize": "PT5M",
+        "allOf": [
+          {
+            "metricName": "Transactions",
+            "metricNamespace": "Microsoft.Storage/storageAccounts",
+            "operator": "GreaterThan",
+            "threshold": "0",
+            "timeAggregation": "Total",
+            "dimensions": [{ "name": "ApiName", "value": "GetBlob" }],
+            "metricValue": 100,
+            "webTestName": null
+          }
+        ],
+        "windowStartTime": "2024-12-18T22:31:30.972Z",
+        "windowEndTime": "2024-12-18T22:31:30.972Z"
+      }
+    },
+    "customProperties": { "customKey1": "value1", "customKey2": "value2" }
+  }
+}
